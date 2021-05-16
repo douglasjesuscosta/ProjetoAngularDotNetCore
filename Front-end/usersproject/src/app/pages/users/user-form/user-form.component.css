@@ -1,0 +1,23 @@
+.form-container {
+    margin-bottom: 60px;
+}
+
+.invalid-field{
+    border-color: #dc3545;
+    padding-right: calc(1.5em + .75rem);
+    background-position: right calc(.375em + .1875rem) center;
+}
+
+.invalid-feedback-message {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+
+.divider-buttons{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
