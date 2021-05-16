@@ -23,7 +23,7 @@ import { UsuarioResolve } from './pages/users/user.resolve'
             },
         }),
     ],
-    providers: [UsuarioResolve],
+    providers: [UsuarioResolve, TranslateModule],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

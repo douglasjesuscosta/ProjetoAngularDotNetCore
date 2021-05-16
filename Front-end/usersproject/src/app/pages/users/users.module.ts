@@ -11,10 +11,11 @@ import { UsuariosResolve } from './users.resolve'
 import { UsuarioClientService } from './users-client.service'
 import { UserFormComponent } from './user-form/user-form.component'
 import { ListUsersComponent } from './list-users/list-users.component'
+import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
     declarations: [ListUsersComponent, UserFormComponent],
-    imports: [CommonModule, ReactiveFormsModule, HttpClientModule, RouterModule.forChild(UserRoutes), NgbModule],
+    imports: [CommonModule, ReactiveFormsModule, HttpClientModule, RouterModule.forChild(UserRoutes), NgbModule, TranslateModule],
     providers: [UsuarioResolve, UsuariosResolve, UsuarioClientService],
 })
 export class UsersModule {}

@@ -3,5 +3,22 @@
     "create.label": "Criar",
     "list.label": "Listar",
     "english.label": "Inglês",
-    "portuguese.label": "Português"
+    "portuguese.label": "Português",
+
+    "user.name.label": "Nome",
+    "user.email.label": "E-mail",
+    "user.cpf.label": "CPF",
+    "user.telephone.label": "Telefone",
+    "user.sex.label": "Gênero",
+    "user.birthday.label": "Data de nascimento",
+
+    "user.name.message.nameEmpy": "Favor informar o nome.",
+    "user.cpf.message.cpfEmpty": "Favor informar o cpf.",
+    "user.telephone.message.telephoneEmpty": "Favor informar o telefone.",
+    "user.email.message.emailEmpty": "Favor informar o e-mail.",
+    "user.sex.message.sexEmpty": "Favor informar o gênero.",
+    "user.birthday.message.insertBirthday": "Favor informar a data de nascimento.",
+
+    "user.message.save.success": "User was successfully saved.",
+    "user.message.save.error": "There was an error while savind the user. Please try again."
 }

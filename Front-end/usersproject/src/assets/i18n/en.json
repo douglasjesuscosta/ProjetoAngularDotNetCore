@@ -2,7 +2,26 @@
     
     "create.label": "Create",
     "list.label": "List",
-    "users.label": "Users",
     "english.label": "English",
-    "portuguese.label": "Portuguese"
+    "portuguese.label": "Portuguese",
+    "back.label": "Back",
+    "save.label": "Salvar",
+    
+    "users.label": "Users",
+    "user.name.label": "Name",
+    "user.email.label": "E-mail",
+    "user.cpf.label": "CPF",
+    "user.telephone.label": "Telephone",
+    "user.sex.label": "Sex",
+    "user.birthday.label": "Birthday",
+
+    "user.name.message.nameEmpy": "Name cannot be empty.",
+    "user.cpf.message.cpfEmpty": "CPF cannot be empty.",
+    "user.telephone.message.telephoneEmpty": "Telephone cannot be empty.",
+    "user.email.message.emailEmpty": "E-mail cannot be empty.",
+    "user.sex.message.sexEmpty": "Sex cannot be empty.",
+    "user.birthday.message.insertBirthday": "Birthday cannot be empty.",
+
+    "user.message.save.success": "User was successfully saved.",
+    "user.message.save.error": "There was an error while savind the user. Please try again."
 }
