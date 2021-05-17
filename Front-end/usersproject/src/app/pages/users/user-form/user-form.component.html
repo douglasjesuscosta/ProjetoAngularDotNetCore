@@ -15,13 +15,13 @@
                     class="invalid-feedback-message"
                     *ngIf="(nameInput.dirty || nameInput.touched || isSubmitted) && nameInput.errors?.required === true"
                 >
-                    {{ user.name.message.nameEmpy }}
+                    {{ 'user.name.message.nameEmpy' | translate }}
                 </div>
             </div>
 
             <!--CPF field-->
             <div class="col-md-6 mb-3">
-                <label for="cpf" class="form-label">CPF</label>
+                <label for="cpf" class="form-label">{{ 'user.cpf.label' | translate }}</label>
                 <input
                     class="form-control"
                     id="cpfUser"
@@ -35,13 +35,13 @@
                     class="invalid-feedback-message"
                     *ngIf="(cpfInput.dirty || cpfInput.touched || isSubmitted) && cpfInput.errors?.required === true"
                 >
-                    Informe o cpf do usuário.
+                    {{ 'user.cpf.message.cpfEmpty' | translate }}
                 </div>
             </div>
 
             <!--Telephone field-->
             <div class="col-md-6 mb-3">
-                <label for="telephone" class="form-label">Telefone</label>
+                <label for="telephone" class="form-label">{{ 'user.telephone.label' | translate }}</label>
                 <input
                     type="email"
                     class="form-control"
@@ -53,13 +53,13 @@
                     *ngIf="(telephoneInput.dirty || telephoneInput.touched || isSubmitted) && telephoneInput.errors?.required === true"
                     class="invalid-feedback-message"
                 >
-                    Informe o telefone do usuário.
+                    {{ 'user.telephone.message.telephoneEmpty' | translate }}
                 </div>
             </div>
 
             <!--E-mail field-->
             <div class="col-md-6 mb-3">
-                <label for="email" class="form-label">E-mail</label>
+                <label for="email" class="form-label">{{ 'user.email.label' | translate }}</label>
                 <input
                     type="email"
                     class="form-control"
@@ -73,35 +73,35 @@
                     class="invalid-feedback-message"
                     *ngIf="(emailInput.dirty || emailInput.touched || isSubmitted) && emailInput.errors?.required === true"
                 >
-                    Informe o e-mail do usuário.
+                    {{ 'user.email.message.emailEmpty' | translate }}
                 </div>
             </div>
 
             <!--Telephone field-->
             <div class="col-md-6 mb-3">
-                <label for="exampleInputEmail1" class="form-label">Sexo</label>
+                <label class="form-label">{{ 'user.sex.label' | translate }}</label>
                 <div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="sex" id="inlineRadio1" formControlName="sex" value="F" />
-                        <label class="form-check-label" for="inlineRadio1">Feminino</label>
+                        <label class="form-check-label" for="inlineRadio1">{{ 'user.sex.female.label' | translate }}</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="sex" id="inlineRadio2" formControlName="sex" value="M" />
-                        <label class="form-check-label" for="inlineRadio2">Masculino</label>
+                        <label class="form-check-label" for="inlineRadio2">{{ 'user.sex.male.label' | translate }}</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="sex" id="inlineRadio3" formControlName="sex" value="O" />
-                        <label class="form-check-label" for="inlineRadio3">Outro</label>
+                        <label class="form-check-label" for="inlineRadio3">{{ 'user.sex.other.label' | translate }}</label>
                     </div>
                 </div>
                 <div *ngIf="(sexInput.dirty || sexInput.touched || isSubmitted) && sexInput.errors?.required === true" class="invalid-feedback-message">
-                    Favor preencher o campo.
+                    {{ 'user.sex.message.sexEmpty' | translate }}
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="birthday" class="form-label">Data de nascimento</label>
+                    <label for="birthday" class="form-label">{{ 'user.birthday.label' | translate }}</label>
                     <input
                         type="date"
                         class="form-control"
@@ -116,7 +116,7 @@
                         *ngIf="(birthdayInput.dirty || birthdayInput.touched || isSubmitted) && birthdayInput.errors?.required === true"
                         class="invalid-feedback-message"
                     >
-                        Favor preencher o campo.
+                        {{ 'user.birthday.message.birthdayEmpty' | translate }}
                     </div>
                 </div>
             </div>
@@ -125,12 +125,12 @@
         <div class="row">
             <div class="col-md-12 mb-3">
                 <button type="submit" class="btn btn-primary">
-                    <span>Salvar</span>
+                    <span>{{ 'save.label' | translate }}</span>
                     <span class="spinner-border spinner-border-sm" *ngIf="isLoading" role="status" aria-hidden="true"></span>
                 </button>
                 <span class="divider-buttons"></span>
                 <button (click)="back()" class="btn btn-outline-primary">
-                    <span>Voltar</span>
+                    <span>{{ 'back.label' | translate }}</span>
                 </button>
             </div>
         </div>

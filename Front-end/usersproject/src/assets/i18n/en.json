@@ -1,18 +1,25 @@
 {
-    
     "create.label": "Create",
     "list.label": "List",
     "english.label": "English",
     "portuguese.label": "Portuguese",
     "back.label": "Back",
-    "save.label": "Salvar",
+    "save.label": "Save",
+    "actions.label": "Actions",
+    "edit.label": "Edit",
+    "delete.label": "Delele",
     
+
+    "users.list": "List users",
     "users.label": "Users",
     "user.name.label": "Name",
     "user.email.label": "E-mail",
     "user.cpf.label": "CPF",
     "user.telephone.label": "Telephone",
     "user.sex.label": "Sex",
+    "user.sex.female.label": "Female",
+    "user.sex.male.label": "Male",
+    "user.sex.other.label": "Other",
     "user.birthday.label": "Birthday",
 
     "user.name.message.nameEmpy": "Name cannot be empty.",
@@ -20,7 +27,7 @@
     "user.telephone.message.telephoneEmpty": "Telephone cannot be empty.",
     "user.email.message.emailEmpty": "E-mail cannot be empty.",
     "user.sex.message.sexEmpty": "Sex cannot be empty.",
-    "user.birthday.message.insertBirthday": "Birthday cannot be empty.",
+    "user.birthday.message.birthdayEmpty": "Birthday cannot be empty.",
 
     "user.message.save.success": "User was successfully saved.",
     "user.message.save.error": "There was an error while savind the user. Please try again."

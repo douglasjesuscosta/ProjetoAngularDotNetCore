@@ -4,12 +4,21 @@
     "list.label": "Listar",
     "english.label": "Inglês",
     "portuguese.label": "Português",
-
+    "back.label": "Voltar",
+    "save.label": "Salvar",
+    "actions.label": "Ações",
+    "edit.label": "Editar",
+    "delete.label": "Excluir",
+    
+    "users.list": "Listagem de usuários",
     "user.name.label": "Nome",
     "user.email.label": "E-mail",
     "user.cpf.label": "CPF",
     "user.telephone.label": "Telefone",
     "user.sex.label": "Gênero",
+    "user.sex.female.label": "Feminino",
+    "user.sex.male.label": "Masculino",
+    "user.sex.other.label": "Outro",
     "user.birthday.label": "Data de nascimento",
 
     "user.name.message.nameEmpy": "Favor informar o nome.",
@@ -19,6 +28,6 @@
     "user.sex.message.sexEmpty": "Favor informar o gênero.",
     "user.birthday.message.insertBirthday": "Favor informar a data de nascimento.",
 
-    "user.message.save.success": "User was successfully saved.",
-    "user.message.save.error": "There was an error while savind the user. Please try again."
+    "user.message.save.success": "Usuário salvo com sucesso.",
+    "user.message.save.error": "Ocorreu um erro durante ."
 }

@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
     public selectedLanguage: string
 
     constructor(private translateService: TranslateService) {
-        this.selectedLanguage = this.defaultLanguage
+        this.selectedLanguage = translateService.currentLang ? translateService.currentLang : this.defaultLanguage
         translateService.setDefaultLang(this.defaultLanguage)
     }
 
