@@ -5,8 +5,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 
 import { AppComponent } from './app.component'
-import { AppRoutingModule } from './app-routing.module'
 import { LayoutModule } from './layout/layout.module'
+import { AppRoutingModule } from './app-routing.module'
 import { UsuarioResolve } from './pages/users/user.resolve'
 
 @NgModule({

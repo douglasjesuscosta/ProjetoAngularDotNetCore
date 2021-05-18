@@ -23,5 +23,6 @@ export class NavbarComponent implements OnInit {
 
     public onLanguageChange(event) {
         this.translateService.use(this.selectedLanguage)
+        this.defaultLanguage = this.selectedLanguage
     }
 }
