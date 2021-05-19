@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { ReactiveFormsModule } from '@angular/forms'
+import { TranslateModule } from '@ngx-translate/core'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpClientModule } from '@angular/common/http'
 
@@ -11,7 +12,6 @@ import { UsuariosResolve } from './users.resolve'
 import { UsuarioClientService } from './users-client.service'
 import { UserFormComponent } from './user-form/user-form.component'
 import { ListUsersComponent } from './list-users/list-users.component'
-import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
     declarations: [ListUsersComponent, UserFormComponent],

@@ -21,11 +21,17 @@ export class ProgressBarComponent implements OnInit {
             this.isLoading = true
         })
         this.progressBarManangerService.onStop.subscribe(() => {
-            console.log('LOADING END')
-            this.currentProgress = 100
-            //this.isLoading = false
-            this.currentProgress = 0
+            this.onCompleteRequisition()
         })
+    }
+
+    private onCompleteRequisition() {
+        console.log('LOADING END')
+        this.currentProgress = 100
+        setTimeout(() => {
+            this.isLoading = false
+            this.currentProgress = 0
+        }, 500)
     }
 
     ngOnInit(): void {}

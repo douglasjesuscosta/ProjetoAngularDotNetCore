@@ -7,10 +7,12 @@ import { TranslateModule } from '@ngx-translate/core'
 import { NavbarComponent } from './navbar/navbar.component'
 import { ProgressBarComponent } from './progress-bar/progress-bar.component'
 import { ProgressBarManangerModule } from '../shared/progress-bar-mananger/progress-bar-mananger.module'
+import { MessagesComponent } from './messages/messages.component'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
-    declarations: [NavbarComponent, ProgressBarComponent],
-    imports: [CommonModule, TranslateModule, FormsModule, RouterModule, ProgressBarManangerModule],
+    declarations: [NavbarComponent, ProgressBarComponent, MessagesComponent],
+    imports: [CommonModule, TranslateModule, FormsModule, RouterModule, ProgressBarManangerModule, NgbModule],
     providers: [NavbarComponent],
     exports: [NavbarComponent, ProgressBarComponent],
 })
