@@ -23,24 +23,27 @@ export class SimpleMessageComponent {
      * Method to open simple modal with "ok" button.
      */
     private monitorShowOkMessage() {
-        this.messageService.displayOkMessageEvent.subscribe((message: Message) => {})
-    }
-
-    private monitorShowConfirmationMessage() {
         this.messageService.displayOkMessageEvent.subscribe((message: Message) => {
-            this.showConfirmationModal(message)
+            this.showOkMessageModal(message)
         })
     }
 
-    private showConfirmationModal(message: Message) {
+    // private monitorShowConfirmationMessage() {
+    //     this.messageService.displayOkMessageEvent.subscribe((message: Message) => {
+    //         this.showConfirmationModal(message)
+    //     })
+    // }
+
+    private showOkMessageModal(message: Message) {
+        this.descriptionMessage = message.description
+        this.titleMessage = message.title
+
         this.modalService.open(this.modal, { ariaLabelledBy: 'modal-basic-title' }).result.then(
             (result) => {
                 message.onOkPress()
-                //this.router.navigate([`users/`])
             },
             (reason) => {
                 message.onOkPress()
-                //this.router.navigate([`users/`])
             }
         )
     }

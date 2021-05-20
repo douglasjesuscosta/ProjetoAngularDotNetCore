@@ -10,6 +10,9 @@
     "edit.label": "Editar",
     "delete.label": "Excluir",
     "ok.label": "Ok",
+
+    "success.message.save.title": "Salvo com sucesso.",
+    "error.message.save.title": "Erro ao salvar.",
     
     "users.list": "Listagem de usuários",
     "user.name.label": "Nome",

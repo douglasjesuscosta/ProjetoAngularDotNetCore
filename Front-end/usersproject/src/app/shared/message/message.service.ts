@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core'
-import { Observable } from 'rxjs'
+import { MessageEnum } from './message-models/message.enum'
 
 import { Message } from './message-models/message.model'
 
@@ -25,7 +25,7 @@ export class MessageService {
         this.displayOkMessageEvent.emit(message)
     }
 
-    public displayConfirmationMessage(title: string, description: string, status: number,, onYesPressed: any, onNoPressed): any {
+    public displayConfirmationMessage(title: string, description: string, status: number, onYesPressed: any, onNoPressed): any {
         let message = new Message(MessageEnum.CONFIRM_MESSAGE, title, description, status, null, onYesPressed, onNoPressed)
         this.displayConfirmMessageEvent.emit(message)
     }

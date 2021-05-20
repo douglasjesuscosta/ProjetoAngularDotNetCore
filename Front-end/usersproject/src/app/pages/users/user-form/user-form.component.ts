@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 import { UsuarioClientService } from '../users-client.service'
 import { MessageService } from 'src/app/shared/message/message.service'
+import { TranslatePipe } from '@ngx-translate/core'
 
 /**
  * Component responsable to insert or update User/Usuario.
@@ -14,7 +15,7 @@ import { MessageService } from 'src/app/shared/message/message.service'
     templateUrl: './user-form.component.html',
     styleUrls: ['./user-form.component.css'],
 })
-export class UserFormComponent implements OnInit {
+export class UserFormComponent {
     public user
     public userForm: FormGroup
     public isSaved: boolean
@@ -27,7 +28,8 @@ export class UserFormComponent implements OnInit {
         private route: ActivatedRoute,
         private formBuilder: FormBuilder,
         private userService: UsuarioClientService,
-        private messageService: MessageService
+        private messageService: MessageService,
+        private translate: TranslatePipe
     ) {
         let value = this.route.firstChild && this.route.firstChild.data['value']
         this.user = value && value['userUpdate']
@@ -45,8 +47,6 @@ export class UserFormComponent implements OnInit {
         this.isSaved = false
         this.isSubmitted = false
     }
-
-    ngOnInit(): void {}
 
     /**
      * Method to initialize the form.
@@ -148,8 +148,11 @@ export class UserFormComponent implements OnInit {
         this.isLoading = false
         this.isSaved = true
 
-        let title: string = 'success.message.save.title'
-        let description: string = 'user.message.save.success'
+        let titleKey: string = 'success.message.save.title'
+        let descriptionKey: string = 'user.message.save.success'
+
+        let title = this.translate.transform(titleKey)
+        let description = this.translate.transform(descriptionKey)
 
         this.messageService.displayOkMessage(title, description, 200, () => {
             this.router.navigate([`users/`])

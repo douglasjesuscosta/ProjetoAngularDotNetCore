@@ -1,3 +1,5 @@
+import { MessageEnum } from './message.enum'
+
 /**
  * Classe de representação de 'Mensagem'.
  *
