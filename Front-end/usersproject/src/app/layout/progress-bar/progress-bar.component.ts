@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
+
 import { ProgressBarManangerService } from 'src/app/shared/progress-bar-mananger/progress-bar-mananger.servce'
 
 @Component({
@@ -6,7 +7,7 @@ import { ProgressBarManangerService } from 'src/app/shared/progress-bar-mananger
     templateUrl: './progress-bar.component.html',
     styleUrls: ['./progress-bar.component.css'],
 })
-export class ProgressBarComponent implements OnInit {
+export class ProgressBarComponent {
     constructor(private progressBarManangerService: ProgressBarManangerService) {
         this.enableListenToLoadingEvents()
     }
@@ -33,6 +34,4 @@ export class ProgressBarComponent implements OnInit {
             this.currentProgress = 0
         }, 500)
     }
-
-    ngOnInit(): void {}
 }

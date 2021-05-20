@@ -1,4 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core'
+import { Observable } from 'rxjs'
 
 import { Message } from './message-models/message.model'
 
@@ -8,21 +9,24 @@ import { Message } from './message-models/message.model'
  */
 @Injectable()
 export class MessageService {
-    public displayMessageEvent: EventEmitter<Message>
+    public displayConfirmMessageEvent: EventEmitter<Message>
+    public displayOkMessageEvent: EventEmitter<Message>
 
     /**
      * Construtor da classe.
      */
     constructor() {
-        this.displayMessageEvent = new EventEmitter<Message>()
+        this.displayOkMessageEvent = new EventEmitter<Message>()
+        this.displayConfirmMessageEvent = new EventEmitter<Message>()
     }
 
-    public displayErrorMessage(onOkPress) {}
-
-    public displaySuccessMessage(title?: String, description?: String, status?: Number, onOkPress) {
-        let message = new Message(MessageEnum.SUCCESS_MESSAGE)
-        this.displayMessageEvent.emit(message)
+    public displayOkMessage(title: string, description: string, status: number, onOkPress) {
+        let message = new Message(MessageEnum.SUCCESS_MESSAGE, title, description, status, onOkPress, null, null)
+        this.displayOkMessageEvent.emit(message)
     }
 
-    public displayConfirmationMessage(onYesPressed, onNoPressed) {}
+    public displayConfirmationMessage(title: string, description: string, status: number,, onYesPressed: any, onNoPressed): any {
+        let message = new Message(MessageEnum.CONFIRM_MESSAGE, title, description, status, null, onYesPressed, onNoPressed)
+        this.displayConfirmMessageEvent.emit(message)
+    }
 }

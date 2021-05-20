@@ -12,5 +12,13 @@ export class Message {
      * @param message
      * @param status
      */
-    constructor(public type?: MessageEnum, public title?: string, public description?: string, public status?: number) {}
+    constructor(
+        public type?: MessageEnum,
+        public title?: string,
+        public description?: string,
+        public status?: number,
+        public onOkPress?: any,
+        public onYesPress?: any,
+        public onNoPress?: any
+    ) {}
 }

@@ -1,11 +1,9 @@
-import { ElementRef } from '@angular/core'
-import { ViewChild } from '@angular/core'
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap'
 
 import { UsuarioClientService } from '../users-client.service'
+import { MessageService } from 'src/app/shared/message/message.service'
 
 /**
  * Component responsable to insert or update User/Usuario.
@@ -24,18 +22,13 @@ export class UserFormComponent implements OnInit {
     public isLoading: boolean
     public isSubmitted: boolean
 
-    @ViewChild('modal', { static: true }) modal: ElementRef
-
     constructor(
         private router: Router,
-        private modalService: NgbModal,
-        private config: NgbModalConfig,
         private route: ActivatedRoute,
         private formBuilder: FormBuilder,
-        private userService: UsuarioClientService
+        private userService: UsuarioClientService,
+        private messageService: MessageService
     ) {
-        this.initializeValues(config)
-
         let value = this.route.firstChild && this.route.firstChild.data['value']
         this.user = value && value['userUpdate']
         this.isUpdate = this.user && this.user.id ? true : false
@@ -47,11 +40,9 @@ export class UserFormComponent implements OnInit {
      * Method to initialize values.
      * @param config
      */
-    private initializeValues(config: NgbModalConfig) {
+    private initializeValues() {
         this.isLoading = false
         this.isSaved = false
-        config.backdrop = 'static'
-        config.keyboard = false
         this.isSubmitted = false
     }
 
@@ -103,7 +94,6 @@ export class UserFormComponent implements OnInit {
     public saveUser(): void {
         this.isSubmitted = true
 
-        console.log(this.userForm.status)
         if (this.userForm.valid) {
             this.isLoading = true
             let userObject = this.userForm.value
@@ -157,7 +147,13 @@ export class UserFormComponent implements OnInit {
     public showSuccessFeedback(value) {
         this.isLoading = false
         this.isSaved = true
-        this.openSuccessModal()
+
+        let title: string = 'success.message.save.title'
+        let description: string = 'user.message.save.success'
+
+        this.messageService.displayOkMessage(title, description, 200, () => {
+            this.router.navigate([`users/`])
+        })
     }
 
     /**
@@ -167,32 +163,11 @@ export class UserFormComponent implements OnInit {
     private showErrorFeedback(error) {
         this.isLoading = false
         this.isSaved = false
-        this.openFailuerModal()
-    }
 
-    /**
-     * Method to open success modal.
-     */
-    private openSuccessModal() {
-        this.modalService.open(this.modal, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-            (result) => {
-                this.router.navigate([`users/`])
-            },
-            (reason) => {
-                this.router.navigate([`users/`])
-            }
-        )
-    }
+        let title: string = 'error.message.save.title'
+        let description: string = 'user.message.save.error'
 
-    /**
-     * Method to open the model after fail request.
-     *
-     */
-    private openFailuerModal() {
-        this.modalService.open(this.modal, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-            (result) => {},
-            (reason) => {}
-        )
+        this.messageService.displayOkMessage(title, description, 500, () => {})
     }
 
     /**
