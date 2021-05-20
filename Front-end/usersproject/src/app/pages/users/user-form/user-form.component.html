@@ -7,7 +7,9 @@
                 <input
                     class="form-control"
                     formControlName="name"
-                    [ngClass]="{ 'invalid-field': (nameInput.dirty || nameInput.touched || isSubmitted) && nameInput.errors?.required === true }"
+                    [ngClass]="{
+                        'invalid-field': (nameInput.dirty || nameInput.touched || isSubmitted) && nameInput.errors?.required === true
+                    }"
                     id="name"
                 />
                 <div
@@ -26,7 +28,9 @@
                     class="form-control"
                     id="cpfUser"
                     formControlName="cpf"
-                    [ngClass]="{ 'invalid-field': (cpfInput.dirty || cpfInput.touched || isSubmitted) && cpfInput.errors?.required === true }"
+                    [ngClass]="{
+                        'invalid-field': (cpfInput.dirty || cpfInput.touched || isSubmitted) && cpfInput.errors?.required === true
+                    }"
                     required
                 />
 
@@ -47,7 +51,10 @@
                     class="form-control"
                     formControlName="telephone"
                     id="telephone"
-                    [ngClass]="{ 'invalid-field': (telephoneInput.dirty || telephoneInput.touched || isSubmitted) && telephoneInput.errors?.required === true }"
+                    [ngClass]="{
+                        'invalid-field':
+                            (telephoneInput.dirty || telephoneInput.touched || isSubmitted) && telephoneInput.errors?.required === true
+                    }"
                 />
                 <div
                     *ngIf="(telephoneInput.dirty || telephoneInput.touched || isSubmitted) && telephoneInput.errors?.required === true"
@@ -65,7 +72,9 @@
                     class="form-control"
                     formControlName="email"
                     id="email"
-                    [ngClass]="{ 'invalid-field': (emailInput.dirty || emailInput.touched || isSubmitted) && emailInput.errors?.required === true }"
+                    [ngClass]="{
+                        'invalid-field': (emailInput.dirty || emailInput.touched || isSubmitted) && emailInput.errors?.required === true
+                    }"
                 />
                 <div
                     id="emailHelp"
@@ -94,7 +103,10 @@
                         <label class="form-check-label" for="inlineRadio3">{{ 'user.sex.other.label' | translate }}</label>
                     </div>
                 </div>
-                <div *ngIf="(sexInput.dirty || sexInput.touched || isSubmitted) && sexInput.errors?.required === true" class="invalid-feedback-message">
+                <div
+                    *ngIf="(sexInput.dirty || sexInput.touched || isSubmitted) && sexInput.errors?.required === true"
+                    class="invalid-feedback-message"
+                >
                     {{ 'user.sex.message.sexEmpty' | translate }}
                 </div>
             </div>
@@ -108,7 +120,8 @@
                         name="birthday"
                         id="birthday"
                         [ngClass]="{
-                            'invalid-field': (birthdayInput.dirty || birthdayInput.touched || isSubmitted) && birthdayInput.errors?.required === true
+                            'invalid-field':
+                                (birthdayInput.dirty || birthdayInput.touched || isSubmitted) && birthdayInput.errors?.required === true
                         }"
                         formControlName="birthday"
                     />
@@ -135,21 +148,4 @@
             </div>
         </div>
     </form>
-
-    <ng-template #modal let-c="close" let-d="dismiss">
-        <div class="modal-header">
-            <h4 class="modal-title" *ngIf="isSaved" id="modal-basic-title">Salvo com sucesso!</h4>
-            <h4 class="modal-title" *ngIf="!isSaved" id="modal-basic-title">Erro ao salvar</h4>
-            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p *ngIf="isSaved">O usuário foi salvo com sucesso!</p>
-            <p *ngIf="!isSaved">Houve um erro ao tentar concluir a operação. Favor tente novamente.</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Ok</button>
-        </div>
-    </ng-template>
 </div>
