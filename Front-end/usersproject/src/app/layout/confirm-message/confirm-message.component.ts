@@ -32,6 +32,9 @@ export class ConfirmMessageComponent {
      *
      */
     private showConfirmationModal(message: Message) {
+        this.titleMessage = this.translatePipe.transform(message.title)
+        this.descriptionMessage = this.translatePipe.transform(message.description)
+
         this.modalService.open(this.modalConfirmation, { ariaLabelledBy: 'modal-basic-title' }).result.then(
             (result) => {
                 message.onYesPress()

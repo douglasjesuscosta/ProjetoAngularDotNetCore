@@ -25,7 +25,6 @@
     "user.sex.other.label": "Other",
     "user.birthday.label": "Birthday",
 
-    "user.message.confirm.delete.title": "Delete user confirmation.",
     
     "user.name.message.nameEmpy": "Name cannot be empty.",
     "user.cpf.message.cpfEmpty": "CPF cannot be empty.",
@@ -34,7 +33,11 @@
     "user.sex.message.sexEmpty": "Sex cannot be empty.",
     "user.birthday.message.birthdayEmpty": "Birthday cannot be empty.",
     
+    "user.message.confirm.delete.title": "Delete user confirmation.",
+    "user.message.delete.success.title": "User deleted with success.",
+
     "user.message.confirm.delete.description": "Are you sure you want to delete this user? This action cannot be undone.",
+    "user.message.delete.success.description": "The user was successfully deleted.",
     "user.message.save.success": "User was successfully saved.",
     "user.message.save.error": "There was an error while savind the user. Please try again."
 }

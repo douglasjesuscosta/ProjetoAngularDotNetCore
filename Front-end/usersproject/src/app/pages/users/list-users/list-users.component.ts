@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { TranslatePipe } from '@ngx-translate/core'
+import { User } from 'src/app/model/User'
 import { MessageService } from 'src/app/shared/message/message.service'
 
 import { UsuarioClientService } from '../users-client.service'
@@ -18,6 +19,7 @@ export class ListUsersComponent implements OnInit {
     public users = []
     public isLoading: boolean
     public showSuccessMessage: boolean
+    private seletecteUser: User
 
     constructor(
         private route: ActivatedRoute,
@@ -60,15 +62,24 @@ export class ListUsersComponent implements OnInit {
      *
      */
     private openConfirmationModal(user) {
+        this.seletecteUser = user
         let titleKey = 'user.message.confirm.delete.title'
         let descriptionKey = 'user.message.confirm.delete.description'
 
         let title = this.translatePipe.transform(titleKey)
         let description = this.translatePipe.transform(descriptionKey)
 
-        this.messageService.displayConfirmationMessage(title, description, null, this.continueUserExclusion, () => {
-            this.router.navigate([`users/`])
-        })
+        this.messageService.displayConfirmationMessage(
+            title,
+            description,
+            null,
+            () => {
+                this.continueUserExclusion(user)
+            },
+            () => {
+                this.router.navigate([`users/`])
+            }
+        )
     }
 
     /**
@@ -79,14 +90,21 @@ export class ListUsersComponent implements OnInit {
      */
     private continueUserExclusion(user) {
         this.isLoading = true
-        this.userService.delete(user).subscribe(
-            () => {
-                this.refreshListAfterExclusion()
-            },
+        this.userService.delete(this.seletecteUser).subscribe(
+            () => this.onSuccessExclusion(),
             () => {
                 this.isLoading = false
             }
         )
+    }
+
+    private onSuccessExclusion() {
+        let titleKey = 'user.message.delete.success.title'
+        let descriptionKey = 'user.message.delete.success.description'
+
+        this.messageService.displayOkMessage(titleKey, descriptionKey, null, () => {
+            this.refreshListAfterExclusion()
+        })
     }
 
     /**
