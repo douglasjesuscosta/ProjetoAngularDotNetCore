@@ -12,7 +12,7 @@
 
     "success.message.save.title": "Saved successfully.",
     "error.message.save.title": "Error while saving.",
-
+    
     "users.list": "List users",
     "users.label": "Users",
     "user.name.label": "Name",
@@ -25,13 +25,16 @@
     "user.sex.other.label": "Other",
     "user.birthday.label": "Birthday",
 
+    "user.message.confirm.delete.title": "Delete user confirmation.",
+    
     "user.name.message.nameEmpy": "Name cannot be empty.",
     "user.cpf.message.cpfEmpty": "CPF cannot be empty.",
     "user.telephone.message.telephoneEmpty": "Telephone cannot be empty.",
     "user.email.message.emailEmpty": "E-mail cannot be empty.",
     "user.sex.message.sexEmpty": "Sex cannot be empty.",
     "user.birthday.message.birthdayEmpty": "Birthday cannot be empty.",
-
+    
+    "user.message.confirm.delete.description": "Are you sure you want to delete this user? This action cannot be undone.",
     "user.message.save.success": "User was successfully saved.",
     "user.message.save.error": "There was an error while savind the user. Please try again."
 }

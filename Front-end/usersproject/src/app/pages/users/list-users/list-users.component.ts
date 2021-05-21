@@ -1,8 +1,7 @@
-import { ViewChild } from '@angular/core'
-import { ElementRef } from '@angular/core'
 import { Component, OnInit } from '@angular/core'
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { ActivatedRoute, Router } from '@angular/router'
+import { TranslatePipe } from '@ngx-translate/core'
+import { MessageService } from 'src/app/shared/message/message.service'
 
 import { UsuarioClientService } from '../users-client.service'
 
@@ -20,10 +19,14 @@ export class ListUsersComponent implements OnInit {
     public isLoading: boolean
     public showSuccessMessage: boolean
 
-    @ViewChild('modalConfirmation', { static: true }) modalConfirmation: ElementRef
-
-    constructor(private route: ActivatedRoute, private router: Router, private userService: UsuarioClientService, private modalService: NgbModal) {
-        this.users = route.snapshot.data['users']
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private userService: UsuarioClientService,
+        private messageService: MessageService,
+        private translatePipe: TranslatePipe
+    ) {
+        this.users = this.route.snapshot.data['users']
         this.isLoading = false
         this.showSuccessMessage = false
     }
@@ -57,15 +60,15 @@ export class ListUsersComponent implements OnInit {
      *
      */
     private openConfirmationModal(user) {
-        this.modalService.open(this.modalConfirmation, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-            (result) => {
-                this.isLoading = true
-                this.continueUserExclusion(user)
-            },
-            (reason) => {
-                this.router.navigate([`users/`])
-            }
-        )
+        let titleKey = 'user.message.confirm.delete.title'
+        let descriptionKey = 'user.message.confirm.delete.description'
+
+        let title = this.translatePipe.transform(titleKey)
+        let description = this.translatePipe.transform(descriptionKey)
+
+        this.messageService.displayConfirmationMessage(title, description, null, this.continueUserExclusion, () => {
+            this.router.navigate([`users/`])
+        })
     }
 
     /**
@@ -75,6 +78,7 @@ export class ListUsersComponent implements OnInit {
      *
      */
     private continueUserExclusion(user) {
+        this.isLoading = true
         this.userService.delete(user).subscribe(
             () => {
                 this.refreshListAfterExclusion()

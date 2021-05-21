@@ -25,12 +25,15 @@
     "user.sex.other.label": "Outro",
     "user.birthday.label": "Data de nascimento",
 
+    "user.message.confirm.delete.title": "Confirmação da exclusão de usuário.",
+
     "user.name.message.nameEmpy": "Favor informar o nome.",
     "user.cpf.message.cpfEmpty": "Favor informar o cpf.",
     "user.telephone.message.telephoneEmpty": "Favor informar o telefone.",
     "user.email.message.emailEmpty": "Favor informar o e-mail.",
     "user.sex.message.sexEmpty": "Favor informar o gênero.",
     "user.birthday.message.insertBirthday": "Favor informar a data de nascimento.",
+    "user.message.confirm.delete.description": "Você tem certeza que deseja excluir o registro desse usuário? Essa ação não pode ser desfeita.",
 
     "user.message.save.success": "Usuário salvo com sucesso.",
     "user.message.save.error": "Ocorreu um erro durante ."

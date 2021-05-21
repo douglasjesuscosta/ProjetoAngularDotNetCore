@@ -1,0 +1,17 @@
+<ng-template #modalConfirmation let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">{{ titleMessage }}</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>
+            {{ descriptionMessage }}
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="d('cancel click')">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="c('Ok click')">Excluir</button>
+    </div>
+</ng-template>

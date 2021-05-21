@@ -28,12 +28,6 @@ export class SimpleMessageComponent {
         })
     }
 
-    // private monitorShowConfirmationMessage() {
-    //     this.messageService.displayOkMessageEvent.subscribe((message: Message) => {
-    //         this.showConfirmationModal(message)
-    //     })
-    // }
-
     private showOkMessageModal(message: Message) {
         this.descriptionMessage = message.description
         this.titleMessage = message.title
