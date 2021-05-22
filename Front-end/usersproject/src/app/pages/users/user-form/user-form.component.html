@@ -23,9 +23,12 @@
 
             <!--CPF field-->
             <div class="col-md-6 mb-3">
-                <label for="cpf" class="form-label">{{ 'user.cpf.label' | translate }}</label>
+                <label for="cpfUser" class="form-label">{{ 'user.cpf.label' | translate }}</label>
                 <input
                     class="form-control"
+                    minlength="11"
+                    maxlength="14"
+                    [mask]="'000.000.000-00'"
                     id="cpfUser"
                     formControlName="cpf"
                     [ngClass]="{
@@ -47,10 +50,10 @@
             <div class="col-md-6 mb-3">
                 <label for="telephone" class="form-label">{{ 'user.telephone.label' | translate }}</label>
                 <input
-                    type="email"
                     class="form-control"
                     formControlName="telephone"
                     id="telephone"
+                    [mask]="telephoneInput.value && telephoneInput.value.length <= 10 ? '(00) 0000-00009' : '(00) 00000-0000'"
                     [ngClass]="{
                         'invalid-field':
                             (telephoneInput.dirty || telephoneInput.touched || isSubmitted) && telephoneInput.errors?.required === true

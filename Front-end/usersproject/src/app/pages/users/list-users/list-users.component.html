@@ -23,12 +23,14 @@
                     <tr *ngFor="let user of users; let i = index">
                         <td>{{ user.name }}</td>
                         <td>{{ user.email }}</td>
-                        <td>{{ user.cpf }}</td>
+                        <td>{{ user.cpf | cpfCnpj }}</td>
                         <td>{{ user.telephone }}</td>
                         <td>{{ user.birthday }}</td>
                         <td>
                             <div>
-                                <button type="button" class="btn btn-outline-primary" (click)="editUser(user)">{{ 'edit.label' | translate }}</button>
+                                <button type="button" class="btn btn-outline-primary" (click)="editUser(user)">
+                                    {{ 'edit.label' | translate }}
+                                </button>
                                 <span class="divider-buttons"></span>
                                 <button type="button" class="btn btn-outline-danger" (click)="deleteUserButtonClick(user)">
                                     {{ 'delete.label' | translate }}

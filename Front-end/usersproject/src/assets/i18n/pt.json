@@ -1,4 +1,6 @@
 {
+    "project.name.label": "Projeto Estudantes",    
+
     "users.label": "Usuários",
     "create.label": "Criar",
     "list.label": "Listar",
@@ -31,7 +33,7 @@
     "user.telephone.message.telephoneEmpty": "Favor informar o telefone.",
     "user.email.message.emailEmpty": "Favor informar o e-mail.",
     "user.sex.message.sexEmpty": "Favor informar o gênero.",
-    "user.birthday.message.insertBirthday": "Favor informar a data de nascimento.",
+    "user.birthday.message.birthdayEmpty": "Favor informar a data de nascimento.",
     
     "user.message.confirm.delete.title": "Confirmação da exclusão de usuário.",
     "user.message.delete.success.title": "Exclusão do usuário feita com sucesso.",
